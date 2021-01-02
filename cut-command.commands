@@ -1,0 +1,17 @@
+# command to replace delimiters from a files line and print...
+cut -d " " -f 1- some_file.txt --output-delimiter='*'
+
+# removes the delimiter 
+cut -d " " -f 1- some_text_file.txt
+
+# prints specified fields on the basis of delimiters
+cut -d " " -f 1,3 some_text_file.txt # prints 1st and 3rd fields.
+cut -d " " -f -3 some_text_file.txt # prints first three fields.
+cut -d " " -f 1- some_text_file.txt # prints all the fields.
+cut -d " " -f 4-5 some_text_file.txt # prints all the filed in the range 4-5.
+
+# complement commands prints all the fields except for the specified by the rest of the command.
+# example
+cut --complement -d " " -f 4-5 some_text_file.txt # it will print all the fields except for the 4,5,6...
+
+# -b selects bytes while -c selects characters...
