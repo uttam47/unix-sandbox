@@ -11,8 +11,8 @@ case $grade in
       echo "Good";;
     C) 
       echo "Okay";;
-    D | E) 
-      echo "Very Bad";;
+    D | E)
+       echo "Very Bad";;
     F) 
       echo "Failed";;
     *) 
