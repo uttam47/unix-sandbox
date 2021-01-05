@@ -1,3 +1,7 @@
+#		*****
+		#CUT command
+#		*****
+
 # command to replace delimiters from a files line and print...
 cut -d " " -f 1- some_file.txt --output-delimiter='*'
 
@@ -15,3 +19,29 @@ cut -d " " -f 4-5 some_text_file.txt # prints all the filed in the range 4-5.
 cut --complement -d " " -f 4-5 some_text_file.txt # it will print all the fields except for the 4,5,6...
 
 # -b selects bytes while -c selects characters...
+
+#		*****
+		#bc command
+#		*****
+
+# will output the result in floating point
+bc (9+11)/3*10 
+
+
+# take an exression as an input and print it's output uptill three decimal points
+
+read x
+
+w=0.00
+w=$(echo "scale = 5; $x" | bc)
+
+printf "%.3f" "$w"
+
+# same result, using scale just truncates the remainder....
+
+read x
+
+w=0.00
+w=$(echo "$x" | bc -l)
+
+printf "%.3f" "$w"
